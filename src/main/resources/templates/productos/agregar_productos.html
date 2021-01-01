@@ -11,11 +11,16 @@
 	<div class="col-12">
 		<h2>Agregar producto</h2>
 
+		<!-- ALERTAS -->
+		<div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)"
+			th:if="${mensaje != null}" th:text="${mensaje}" class="alert">
+		</div>
+
 		<form th:action="@{/productos/agregar}" th:object="${productos}"
 			method="post">
-			
-			
-			
+
+
+
 
 			<div class="card bg-light">
 
@@ -27,10 +32,10 @@
 
 					<div class="form-group row">
 						<label class="col-md-2" for="nombre">Nombre del producto:</label>
-						<input autocomplete="off" autofocus th:field="*{nombre}" id="nombre" 
-							placeholder="Nombre del producto" type="text"
-							class="form-control form-control-sm col-md-10" 
-							> <small></small>
+						<input autocomplete="off" autofocus th:field="*{nombre}"
+							id="nombre" placeholder="Nombre del producto" type="text"
+							class="form-control form-control-sm col-md-10">
+						<small></small>
 					</div>
 
 					<div class="form-group row">
