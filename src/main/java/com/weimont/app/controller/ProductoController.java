@@ -6,13 +6,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.weimont.app.entity.Producto;
 import com.weimont.app.repository.ProductoRepository;
-
-import me.parzibyte.sistemaventasspringboot.PostMapping;
 
 @Controller
 @RequestMapping({ "/productos" })
@@ -34,22 +33,22 @@ public class ProductoController {
 	}
 
 	@PostMapping({ "/agregar" })
-	public String guardarProducto(@ModelAttribute Producto producto, BindingResult bindingResult, 
+	public String guardarProducto(@ModelAttribute Producto producto, BindingResult bindingResult,
 			RedirectAttributes redirectAttrs) {
 		if (bindingResult.hasErrors()) {
 			return "productos/agregar_productos";
 		}
-		
+
 		if (productoRepository.findFirstByCodigo(producto.getCodigo()) != null) {
-				redirectAttrs.addFlashAttribute("mensaje", "Ya existe un producto con ese código");
-				redirectAttrs.addFlashAttribute("clase", "warning");
+			redirectAttrs.addFlashAttribute("mensaje", "Ya existe un producto con ese código");
+			redirectAttrs.addFlashAttribute("clase", "warning");
 			return "redirect:/productos/agregar";
 		}
-		
-		 productoRepository.save(producto);
-		 
-		 redirectAttrs.addFlashAttribute("mensaje", "Agregado correctamente");
-		 redirectAttrs.addFlashAttribute("clase", "success");
+
+		productoRepository.save(producto);
+
+		redirectAttrs.addFlashAttribute("mensaje", "Agregado correctamente");
+		redirectAttrs.addFlashAttribute("clase", "success");
 		return "redirect:/productos/agregar";
 
 	}
