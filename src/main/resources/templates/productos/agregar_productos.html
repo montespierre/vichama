@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/plantilla :: head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<header th:replace="plantilla/plantilla :: header"> </header>
+
+	<div class="container">
+	
+	<form th:action="@{/productos/agregar}" th:object="${producto}" method="post">
+		
+			<div class="card bg-light">
+			
+				<div class="card-header bg-info text-white" th:text="Agregar"></div>
+				
+				<div class="card-body">
+					
+
+					
+					<div class="form-group row">
+						<label class="col-md-2" for="nombre">Nombre del producto:<</label> 
+						<input type="text" th:field="*{nombre}"
+						class="form-control form-control-sm col-md-10" id="nombre"
+						placeholder="Nombre del producto"> 
+						<small></small>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-md-2" for="codigo">Código de barras:</label> 
+						<input type="text" th:field="*{codigo}"
+						class="form-control form-control-sm col-md-10" id="codigo"
+						placeholder="Codigo del producto"> 
+						<small></small>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-md-2" for="existencia">Existencia actual:</label> 
+						<input type="text" th:field="*{existencia}"
+						class="form-control form-control-sm col-md-10" id="existencia"
+						placeholder="Existencia Actual"> 
+						<small></small>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-md-2" for="precio">Precio:</label> 
+						<input type="text" th:field="*{precio}"
+						class="form-control form-control-sm col-md-10" id="precio"
+						placeholder="Precio del producto"> 
+						<small></small>
+					</div>
+					
+				</div>
+				<div class="card-footer bg-light">
+					<input type="submit" class="btn btn-primary btn-sm" value="Guardar">
+				</div>
+				
+				&nbsp;<a class="btn btn-warning" th:href="@{/productos/mostrar}">Ver todos</a>
+				
+			</div>
+		</form>
+	
+
+	</div>
+
+	<footer th:replace="plantilla/plantilla :: footer"> </footer>
+
+
+</body>
+</html>

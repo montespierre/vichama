@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+	<meta charset="UTF-8">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<title>APP CRUD</title>
+</head>
+<body>
+	<!-- Barra de navegación -->
+	<header th:fragment="header">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container">
+				<a class="navbar-brand" href="#"> <strong>VENTAS IN THE CLOUD</strong>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- ENLACES DEL MENU -->
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item"><a class="nav-link" th:href="@{/home}">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/articulos/todos}">Articulos</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/det_ventas/todos}">DetalleVentas</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/empleados/todos}">Empleados</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/ventas/todos}">Ventas</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- Contenido -->
+	<div class="container"></div>
+	<!-- Pie de pagina -->
+	<footer th:fragment="footer"
+		class="bg-dark text-center text-white fixed-bottom p-1">
+		<div class="container">
+			<p>Copyright Weimont Software &copy;2020</p>
+		</div>
+		<script type="text/javascript"
+			th:src="@{/js/jquery-3.5.1.slim.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	</footer>
+</body>
+</html>
