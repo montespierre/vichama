@@ -20,7 +20,7 @@ public class ProductoController {
 	@GetMapping({ "/agregar" })
 	public String agregarProducto(Model model) {
 		model.addAttribute("productos", new Producto());
-		return "productos/agregar_producto";
+		return "productos/agregar_productos";
 	}
 	
 	@GetMapping({"/mostrar"})
