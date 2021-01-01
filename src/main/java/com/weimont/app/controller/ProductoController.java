@@ -17,9 +17,9 @@ public class ProductoController {
 	@Autowired
 	private ProductoRepository productoRepository;
 	
-	@GetMapping({ "/", "/agregar" })
+	@GetMapping({ "/agregar" })
 	public String agregarProducto(Model model) {
-		model.addAttribute("producto", new Producto());
+		model.addAttribute("productos", new Producto());
 		return "productos/agregar_producto";
 	}
 	

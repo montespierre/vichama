@@ -8,32 +8,31 @@
 
 	<header th:replace="plantilla/plantilla :: header"> </header>
 
+	<a class="btn btn-success mb-2" th:href="@{/productos/agregar}">Agregar</a>
 	<div class="table-responsive">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Código</th>
-                    <th>Precio</th>
-                    <th>Existencia</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="producto : ${productos}">
-                    <td th:text="${producto.nombre}"></td>
-                    <td th:text="${producto.codigo}"></td>
-                    <td th:text="${producto.precio}"></td>
-                    <td th:text="${producto.existencia}"></td>
-                    <td>
-                        
-                    </td>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Código</th>
+					<th>Precio</th>
+					<th>Existencia</th>
+					<th>Editar</th>
+					<th>Eliminar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="producto : ${productos}">
+					<td th:text="${producto.nombre}"></td>
+					<td th:text="${producto.codigo}"></td>
+					<td th:text="${producto.precio}"></td>
+					<td th:text="${producto.existencia}"></td>
+					<td></td>
 
-                </tr>
-                </tbody>
-            </table>
-        </div>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
 	<footer th:replace="plantilla/plantilla :: footer"> </footer>
 
