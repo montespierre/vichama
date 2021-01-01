@@ -12,6 +12,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.weimont.app.entity.Producto;
 import com.weimont.app.repository.ProductoRepository;
 
+import me.parzibyte.sistemaventasspringboot.PostMapping;
+
 @Controller
 @RequestMapping({ "/productos" })
 public class ProductoController {
@@ -31,6 +33,7 @@ public class ProductoController {
 		return "productos/ver_productos";
 	}
 
+	@PostMapping({ "/agregar" })
 	public String guardarProducto(@ModelAttribute Producto producto, BindingResult bindingResult, 
 			RedirectAttributes redirectAttrs) {
 		if (bindingResult.hasErrors()) {
