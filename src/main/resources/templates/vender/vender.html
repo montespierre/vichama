@@ -23,7 +23,7 @@
                 <input autofocus autocomplete="off" th:field="*{codigo}" id="codigo"
                        placeholder="Escanea el código o escríbelo y presiona Enter"
                        type="text"
-                       class="form-control" th:classappend="${#fields.hasErrors('codigo')} ? 'is-invalid' : ''">
+                       class="form-control">
                 <div class="invalid-feedback" th:errors="*{codigo}"></div>
 
             </div>
@@ -50,10 +50,7 @@
                     <td th:text="${producto.cantidad}"></td>
                     <td th:text="${producto.total}"></td>
                     <td>
-                        <form th:action="@{/vender/quitar/} + ${iterador.index}" method="post">
-                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i>
-                            </button>
-                        </form>
+                        
                     </td>
                 </tr>
                 </tbody>
