@@ -43,7 +43,7 @@ public class VenderController {
 		
 	@GetMapping({ "/" })
 	public String interfazVender(Model model, HttpServletRequest request) {
-	    model.addAttribute("productos", new Producto());
+	    model.addAttribute("producto", new Producto());
 	    float total = 0;
 	    ArrayList<ProductoParaVender> carrito = this.obtenerCarrito(request);
 	    for (ProductoParaVender p: carrito) total += p.getTotal();
@@ -56,15 +56,13 @@ public class VenderController {
 	    ArrayList<ProductoParaVender> carrito = this.obtenerCarrito(request);
 	    Producto productoBuscadoPorCodigo = productoRepository.findFirstByCodigo(producto.getCodigo());
 	    if (productoBuscadoPorCodigo == null) {
-	        redirectAttrs
-	                .addFlashAttribute("mensaje", "El producto con el código " + producto.getCodigo() + " no existe")
-	                .addFlashAttribute("clase", "warning");
+	        redirectAttrs.addFlashAttribute("mensaje", "El producto con el código " + producto.getCodigo() + " no existe");
+	        redirectAttrs.addFlashAttribute("clase", "warning");
 	        return "redirect:/vender/";
 	    }
 	    if (productoBuscadoPorCodigo.sinExistencia()) {
-	        redirectAttrs
-	                .addFlashAttribute("mensaje", "El producto está agotado")
-	                .addFlashAttribute("clase", "warning");
+	        redirectAttrs.addFlashAttribute("mensaje", "El producto está agotado");
+	        redirectAttrs.addFlashAttribute("clase", "warning");
 	        return "redirect:/vender/";
 	    }
 	    boolean encontrado = false;
