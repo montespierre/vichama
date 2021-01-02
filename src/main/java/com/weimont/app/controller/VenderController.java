@@ -43,7 +43,7 @@ public class VenderController {
 		
 	@GetMapping({ "/" })
 	public String interfazVender(Model model, HttpServletRequest request) {
-	    model.addAttribute("productos", new Producto());
+	    model.addAttribute("producto", new Producto());
 	    float total = 0;
 	    ArrayList<ProductoParaVender> carrito = this.obtenerCarrito(request);
 	    for (ProductoParaVender p: carrito) total += p.getTotal();
