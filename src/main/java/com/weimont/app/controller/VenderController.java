@@ -29,7 +29,7 @@ public class VenderController {
 	
 
 	private ArrayList<ProductoParaVender> obtenerCarrito(HttpServletRequest request) {
-        ArrayList<ProductoParaVender> carrito = (ArrayList<ProductoParaVender>) request.getSession().getAttribute("carrito");
+        ArrayList<ProductoParaVender> carrito = (ArrayList<ProductoParaVender>)request.getSession().getAttribute("carrito");
         if (carrito == null) {
             carrito = new ArrayList<>();
         }

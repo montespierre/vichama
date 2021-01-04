@@ -12,50 +12,44 @@
 		<h2>Vender</h2>
 
 		<!-- ALERTAS -->
-		<div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}"
-             th:text="${mensaje}"
-             class="alert">
-        </div>
 
-		<form th:object="${producto}" th:action="@{/vender/agregar}" method="post">
-            <div class="form-group">
-                <label for="codigo">Código de barras</label>
-                <input autofocus autocomplete="off" th:field="*{codigo}" id="codigo"
-                       placeholder="Escanea el código o escríbelo y presiona Enter"
-                       type="text"
-                       class="form-control">
-                <div class="invalid-feedback" th:errors="*{codigo}"></div>
 
-            </div>
-        </form>
-        
-        <h1 th:text="${'Total: ' + total}"></h1>
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Código</th>
-                    <th>Precio</th>
-                    <th>Cantidad</th>
-                    <th>Total</th>
-                    <th>Quitar de lista</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="producto, iterador : ${session.carrito}">
-                    <td th:text="${producto.nombre}"></td>
-                    <td th:text="${producto.codigo}"></td>
-                    <td th:text="${producto.precio}"></td>
-                    <td th:text="${producto.cantidad}"></td>
-                    <td th:text="${producto.total}"></td>
-                    <td>
-                        
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+		<form th:object="${producto}" th:action="@{/vender/agregar}"
+			method="post">
+			<div class="form-group">
+				<label for="codigo">Código de barras</label> <input autofocus
+					autocomplete="off" th:field="*{codigo}" id="codigo"
+					placeholder="Escanea el código o escríbelo y presiona Enter"
+					type="text" class="form-control">
+				<div class="invalid-feedback" th:errors="*{codigo}"></div>
+
+			</div>
+		</form>
+
+		<h1 th:text="${total}"></h1>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Código</th>
+						<th>Precio</th>
+						<th>Cantidad</th>
+						<th>Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="producto: ${session.carrito}">
+						<td th:text="${producto.nombre}"></td>
+						<td th:text="${producto.codigo}"></td>
+						<td th:text="${producto.precio}"></td>
+						<td th:text="${producto.cantidad}"></td>
+						<td th:text="${producto.total}"></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
 	</div>
 
