@@ -26,6 +26,12 @@
 			</div>
 		</form>
 
+		<form class="mb-2" th:action="@{/vender/terminar}" method="post">
+			<button type="submit" class="btn btn-success">
+				Terminar&nbsp;<i class="fa fa-check"></i>
+			</button>
+		</form>
+
 		<h1 th:text="${total}"></h1>
 		<div class="table-responsive">
 			<table class="table table-bordered">
