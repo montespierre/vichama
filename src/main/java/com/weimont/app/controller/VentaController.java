@@ -15,7 +15,7 @@ public class VentaController {
 	@Autowired
 	VentaRepository ventaRepository;
 	
-	@GetMapping({ "/" })
+	@GetMapping({ "/mostrar" })
     public String mostrarVentas(Model model) {
         model.addAttribute("ventas", ventaRepository.findAll());
         return "ventas/ver_ventas";
