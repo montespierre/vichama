@@ -2,6 +2,39 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="plantilla/plantilla :: head">
 <meta charset="UTF-8">
+
+    <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+    </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f50e8b46c0634f0d8f0aed6bb6c543d0 {
+                    position: relative;
+                    width: 75.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.1.2/dist/leaflet-ant-path.min.js"></script>
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -12,6 +45,7 @@
 		<h1 th:text="${titulo}"></h1>
 
 		<p>Libreria Fiorella</p>
+		<div class="folium-map" id="map_f50e8b46c0634f0d8f0aed6bb6c543d0" ></div>
 		
 
 	</div>
@@ -20,4 +54,99 @@
 
 
 </body>
+<script>    
+    
+            var map_f50e8b46c0634f0d8f0aed6bb6c543d0 = L.map(
+                "map_f50e8b46c0634f0d8f0aed6bb6c543d0",
+                {
+                    center: [-11.108251, -77.610327],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 18,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_91d8aa8f61d449c68f01d453469f42a3 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_f50e8b46c0634f0d8f0aed6bb6c543d0);
+        
+    
+            var marker_3e9da2151f024df9a24e7fd50f6680cc = L.marker(
+                [-11.1082322, -77.609664],
+                {}
+            ).addTo(map_f50e8b46c0634f0d8f0aed6bb6c543d0);
+        
+    
+        var popup_43bac5375d184a99b9591edfb558668c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3584c3cfab1b4e0499f46f231f15e894 = $(`<div id="html_3584c3cfab1b4e0499f46f231f15e894" style="width: 100.0%; height: 100.0%;"><strong>Sede Principal</strong></div>`)[0];
+            popup_43bac5375d184a99b9591edfb558668c.setContent(html_3584c3cfab1b4e0499f46f231f15e894);
+        
+
+        marker_3e9da2151f024df9a24e7fd50f6680cc.bindPopup(popup_43bac5375d184a99b9591edfb558668c)
+        ;
+
+        
+    
+    
+            marker_3e9da2151f024df9a24e7fd50f6680cc.bindTooltip(
+                `<div>
+                     Ver detalles
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f9b229ee956c47d3a1d98e81136cb915 = L.marker(
+                [-11.108015, -77.61107],
+                {}
+            ).addTo(map_f50e8b46c0634f0d8f0aed6bb6c543d0);
+        
+    
+            var icon_c9a299bd14bd47dcb2bfae6979d8f240 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f9b229ee956c47d3a1d98e81136cb915.setIcon(icon_c9a299bd14bd47dcb2bfae6979d8f240);
+        
+    
+        var popup_4c246dc43cd34f4a863fb7448f045897 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e1c8da14e599465dbf673308978abe66 = $(`<div id="html_e1c8da14e599465dbf673308978abe66" style="width: 100.0%; height: 100.0%;"><strong>Sede Bolivar</strong></div>`)[0];
+            popup_4c246dc43cd34f4a863fb7448f045897.setContent(html_e1c8da14e599465dbf673308978abe66);
+        
+
+        marker_f9b229ee956c47d3a1d98e81136cb915.bindPopup(popup_4c246dc43cd34f4a863fb7448f045897)
+        ;
+
+        
+    
+    
+            marker_f9b229ee956c47d3a1d98e81136cb915.bindTooltip(
+                `<div>
+                     Ver detalles
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            ant_path_4d5c48eaaf03491d96be5dc32a10c9e1 = L.polyline.antPath(
+              [[-11.108204170456288, -77.61038303375244], [-11.10820153849822, -77.61066064238548], [-11.108254177655175, -77.61105224490166], [-11.108018617353954, -77.6110589504242]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_f50e8b46c0634f0d8f0aed6bb6c543d0);
+        
+    
+            ant_path_369e55a4f6e2477e9096b89b0e02d60e = L.polyline.antPath(
+              [[-11.108205486435327, -77.61034816503525], [-11.108218646225277, -77.61002093553543], [-11.10825022971874, -77.60964542627335]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_f50e8b46c0634f0d8f0aed6bb6c543d0);
+        
+</script>
 </html>
