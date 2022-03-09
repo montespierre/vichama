@@ -4,8 +4,20 @@
 	<meta charset="UTF-8">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<!-- ............................... Mapa ................................................. -->
+	<link rel="stylesheet" th:href="@{/css/leaflet.css}">
+	<link rel="stylesheet" th:href="@{/css/bootstrap-theme.min.css}">
+	<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+	<link rel="stylesheet" th:href="@{/css/leaflet.awesome-markers.css}">
+	<link rel="stylesheet" th:href="@{/css/leaflet.awesome.rotate.min.css}">
+	<!-- ................................................................................ -->
+
+	
+	
 	<title>WEIMONT APP</title>
 </head>
+
+
 <body>
 	<!-- Barra de navegación -->
 	<header th:fragment="header">
@@ -40,10 +52,23 @@
 		<div class="container">
 			<p>Copyright Pierre Montes &copy;2020</p>
 		</div>
-		<script type="text/javascript"
-			th:src="@{/js/jquery-3.5.1.slim.min.js}"></script>
-		<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+		<!-- ............................. Mapa ................................................... -->
+		<script type="text/javascript" th:src="@{/js/leaflet.js}"></script> <!-- OK -->
+		<script type="text/javascript" th:src="@{/js/jquery-1.12.4.min.js}"></script> <!-- OK -->
 		<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/leaflet.awesome-markers.js}"></script>
+		<script type="text/javascript" th:src="@{/js/leaflet-ant-path.min.js}"></script>
+		<!-- ............................... Original ................................................. -->
+		<script type="text/javascript" th:src="@{/js/jquery-3.5.1.slim.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+		<!-- .............................. Mapa nuevo .................................................. -->
+		
+		<script type="text/javascript" th:src="@{/js/pruebaMapa.min.js}"></script>
+		
+		
+		
+		
 	</footer>
 </body>
+
 </html>
