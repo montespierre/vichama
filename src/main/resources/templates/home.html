@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="plantilla/plantilla :: head">
-<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta charset="UTF-8">
 	<script>
             L_NO_TOUCH = false;
             L_DISABLE_3D = false;
@@ -21,8 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
     
-    <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
                 #map_f50e8b46c0634f0d8f0aed6bb6c543d0 {
                     position: relative;
@@ -40,16 +39,16 @@
 
 	<header th:replace="plantilla/plantilla :: header"> </header>
 
-	<div class="container">
+	<!-- <div class="container">
 		<h1 th:text="${titulo}"></h1>
 
-		<p>Libreria Fiorella</p>
+		<p>Libreria Fiorella</p>-->
 		<!-- ............................. Mapa ................................................... -->
 		<div class="folium-map" id="map_f50e8b46c0634f0d8f0aed6bb6c543d0" ></div>
 		<!-- ............................. Mapa ................................................... -->
 		
 
-	</div>
+	<!--</div>-->
 
 	<footer th:replace="plantilla/plantilla :: footer"> </footer>
 
